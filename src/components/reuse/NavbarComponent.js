@@ -1,5 +1,5 @@
 import logo from "../../assets/logo.png";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import "../Components.css";
 import { Nav, Navbar, Container, Offcanvas } from "react-bootstrap";
 import useAuth from "../../hooks/useAuth";
@@ -30,19 +30,19 @@ const NavbarComponent = () => {
     //       <Offcanvas.Body>
     //         <Nav className="ms-auto" variant="tabs" defaultActiveKey="/">
     //           <Nav.Item>
-    //             <NavLink href="/">Home</NavLink>
+    //             <Nav.Link href="/">Home</Nav.Link>
     //           </Nav.Item>
     //           <Nav.Item>
-    //             <NavLink href="/about">About</NavLink>
+    //             <Nav.Link href="/about">About</Nav.Link>
     //           </Nav.Item>
     //           <Nav.Item>
-    //             <NavLink href="#f">Features</NavLink>
+    //             <Nav.Link href="#f">Features</Nav.Link>
     //           </Nav.Item>
     //           <Nav.Item>
-    //             <NavLink href="/bucket">My Bucket</NavLink>
+    //             <Nav.Link href="/bucket">My Bucket</Nav.Link>
     //           </Nav.Item>
     //           <Nav.Item>
-    //             <NavLink href="/signin">Sign In</NavLink>
+    //             <Nav.Link href="/signin">Sign In</Nav.Link>
     //           </Nav.Item>
     //         </Nav>
     //       </Offcanvas.Body>
@@ -80,28 +80,28 @@ const NavbarComponent = () => {
               defaultActiveKey="/"
             >
               <Nav.Item>
-                <NavLink to="/">Home</NavLink>
+                <Nav.Link to="/">Home</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <NavLink to="/about">About Us</NavLink>
+                <Nav.Link to="/about">About Us</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <NavLink to="/features">Features</NavLink>
+                <Nav.Link to="/features">Features</Nav.Link>
               </Nav.Item>
               {user && (
                 <Nav.Item>
-                  <NavLink to="/bucket">MyBucket</NavLink>
+                  <Nav.Link to="/bucket">MyBucket</Nav.Link>
                 </Nav.Item>
               )}
               {user ? (
                 <Nav.Item>
-                  <NavLink to="/" onClick={logout}>
+                  <Nav.Link to="/" onClick={logout}>
                     Logout
-                  </NavLink>
+                  </Nav.Link>
                 </Nav.Item>
               ) : (
                 <Nav.Item>
-                  <NavLink to="/signin">Signin</NavLink>
+                  <Nav.Link to="/signin">Signin</Nav.Link>
                 </Nav.Item>
               )}
             </Nav>
