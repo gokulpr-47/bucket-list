@@ -1,5 +1,5 @@
 import logo from "../../assets/logo.png";
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../Components.css";
 import { Nav, Navbar, Container, Offcanvas } from "react-bootstrap";
 import useAuth from "../../hooks/useAuth";
@@ -80,28 +80,38 @@ const NavbarComponent = () => {
               defaultActiveKey="/"
             >
               <Nav.Item>
-                <Nav.Link to="/">Home</Nav.Link>
+                <Nav.Link as={NavLink} to="/">
+                  Home
+                </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link to="/about">About Us</Nav.Link>
+                <Nav.Link as={NavLink} to="/about">
+                  About Us
+                </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link to="/features">Features</Nav.Link>
+                <Nav.Link as={NavLink} to="/features">
+                  Features
+                </Nav.Link>
               </Nav.Item>
               {user && (
                 <Nav.Item>
-                  <Nav.Link to="/bucket">MyBucket</Nav.Link>
+                  <Nav.Link as={NavLink} to="/bucket">
+                    MyBucket
+                  </Nav.Link>
                 </Nav.Item>
               )}
               {user ? (
                 <Nav.Item>
-                  <Nav.Link to="/" onClick={logout}>
+                  <Nav.Link as={NavLink} to="/" onClick={logout}>
                     Logout
                   </Nav.Link>
                 </Nav.Item>
               ) : (
                 <Nav.Item>
-                  <Nav.Link to="/signin">Signin</Nav.Link>
+                  <Nav.Link as={NavLink} to="/signin">
+                    Signin
+                  </Nav.Link>
                 </Nav.Item>
               )}
             </Nav>
