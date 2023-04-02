@@ -1,0 +1,27 @@
+.get-started {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.get-started > button {
+  background-color: #030202;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 15px 30px;
+  border-radius: 30px !important;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  transition: 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.entered-button {
+  background: #251f1f;
+  -webkit-box-shadow: 0px 4px 11px 2px rgba(163, 29, 2, 1);
+  -moz-box-shadow: 0px 4px 11px 2px rgba(163, 29, 2, 1);
+  box-shadow: 0px 4px 11px 2px rgba(163, 29, 2, 1);
+  /* transition: all 2s ease-in-out; */
+  transform: scale(1.2, 1.2);
+}

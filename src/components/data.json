@@ -1,0 +1,42 @@
+{
+    "buckets": [
+        {
+            "id": 1,
+            "bucketName": "bucket1",
+            "code": "asdw3f",
+            "lists": "2"
+        },
+        {
+            "id": 2,
+            "bucketName": "bucket2",
+            "code": "aw3rdfad",
+            "lists": "2"
+        },
+        {
+            "id": 3,
+            "bucketName": "bucket3",
+            "code": "s342dads",
+            "lists": "1"
+        }
+    ],
+    "lists": [
+        {
+            "id": 1,
+            "listName": "list1",
+            "lastedit": "John",
+            "time": "12"
+        },
+        {
+            "id": 2,
+            "listName": "list2",
+            "lastedit": "Kenny",
+            "time": "12"
+        },
+        {
+            "id": 3,
+            "listName": "list3",
+            "lastedit": "Clark",
+            "time": "12"
+        }
+    ]
+}

@@ -1,0 +1,376 @@
+/* .navbar-container {
+  position: fixed;
+  width: 86%;
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  background: #1f1f1f;
+  align-items: center;
+  z-index: 0;
+}
+nav > dl {
+  margin: 0;
+}
+
+.logo-container > a {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container > a > img {
+  width: 75px;
+  height: 75px;
+}
+
+.logo-container > a > p {
+  font-size: 35px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #ee6502;
+}
+
+.logo-container > a > p > span {
+  color: #ffffff;
+}
+
+.nav-items > nav > dl {
+  display: flex;
+  width: 450px;
+  justify-content: space-between;
+}
+
+.nav-items > dl > dd {
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+}
+
+.active {
+  color: #c72702 !important;
+  transition: 0.35s linear;
+} */
+
+/* bootstrap navbar */
+.brand-container {
+  display: flex;
+  align-items: center;
+}
+.navbar-brand > p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #ee6502;
+}
+
+.navbar-brand > p > span {
+  color: #ffffff;
+}
+
+.nav-link {
+  padding-right: 20px !important;
+}
+
+.nav-tabs,
+.nav-link {
+  border: none !important;
+}
+
+.navbar-nav .nav-link.active {
+  background: inherit !important;
+  color: #ee6502 !important;
+  border: none;
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:focus-visible,
+.nav-tabs .nav-link:hover {
+  border: none;
+  outline: none;
+  color: #e47e35 !important;
+}
+
+.nav-item {
+  padding-right: 20px;
+}
+
+.offcanvas-start {
+  width: 230px !important;
+}
+
+.navbar-toggler,
+.collapsed {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.collapsed:focus {
+  box-shadow: none;
+}
+
+/* .offcanvas-body {
+  background: black;
+} */
+
+/* bucket header */
+.bucketHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 110px 60px 50px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.bucketHeaderContainer > .name {
+  display: flex;
+  align-items: center;
+}
+
+.bucketHeaderContainer > .name > .code {
+  font-size: 12px;
+  padding-left: 20px;
+  font-weight: 200;
+}
+
+.bucketHeaderContainer > .name > .copy {
+  font-size: 14px;
+  padding-left: 4px;
+  font-weight: 300;
+  color: #ee6502;
+}
+
+.dropdown-menu {
+  inset: 0px 40px auto auto;
+}
+
+.dropdown-menu-dark {
+  /* transform: translate3d(60px, 40px, 0px) !important; */
+  text-align: center !important;
+}
+
+.dropdown-toggle {
+  border-radius: 20px !important;
+}
+
+.dropdown-toggle::after {
+  content: none !important;
+}
+
+/* .bucketHeaderContainer > .add-button{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EE6502;
+  width: 50px;
+  height: 50px;
+  border-radius: 180px;
+} */
+
+/* .bucketHeaderContainer > .add-button:hover {
+  cursor: pointer;
+  background-color: #c72702;
+  transition: all 0.5s ease-in-out;
+} */
+
+.bucketHeaderContainer > .add-button > p {
+  font-weight: 500;
+  font-size: 30px;
+  text-align: center;
+  background-color: #ee6502;
+  width: 50px;
+  height: 50px;
+  border-radius: 180px;
+  margin: auto;
+}
+
+.bucketHeaderContainer > .add-button > p:hover {
+  cursor: pointer;
+  background-color: #c72702;
+  transition: all 0.5s ease-in-out;
+}
+
+.copy {
+  cursor: pointer;
+}
+
+.copied {
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+/* bucketComponents */
+.allItems {
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: space-around;
+  align-content: space-between;
+  grid-row-gap: 40px;
+}
+
+.BucketItemsContainer {
+  position: relative;
+}
+
+.BucketItems {
+  width: 80%;
+  height: 80px;
+  background-color: #585858;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 0 62px;
+  z-index: 10;
+  position: absolute;
+}
+
+.BucketItems > .BucketDetails > p {
+  color: white;
+}
+
+.BucketItems > .BucketDetails > .bucketCode {
+  font-size: 12px;
+}
+
+.BucketItems > .itemsCount {
+  color: #ee6502;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.hoverItems {
+  width: 80%;
+  height: 80px;
+  background-color: rgb(238, 101, 2, 0.42);
+  border-radius: 25px;
+  z-index: -1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+  position: relative;
+  left: 5px;
+}
+
+/* .BucketItems,
+.hoverItems {
+  width: 80%;
+  height: 80px;
+} */
+
+.BucketItems:hover + .hoverItems {
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.2s;
+  transform: translateX(80px);
+}
+
+.hoverItems:hover {
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.2s;
+  transform: translateX(80px);
+}
+
+.BucketItemsContainer:hover,
+.ListItemsContainer:hover {
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.2s;
+  transform: translateX(1px);
+}
+
+.hoverItems > svg {
+  font-size: 25px;
+  margin-left: 16px;
+  color: white;
+}
+
+.hoverItems > .trash:hover {
+  color: red;
+}
+
+.trash,
+.edit {
+  animation-duration: 1.5s;
+}
+
+.trash:hover,
+.edit:hover {
+  animation-name: bounce-7;
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+@keyframes bounce-7 {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    transform: scale(0.9, 1.1) translateY(-10px);
+  }
+  50% {
+    transform: scale(1.05, 0.95) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(-7px);
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+/* list componenets */
+.ListItemsContainer {
+  color: white;
+  position: relative;
+}
+.listName {
+  font-weight: 600;
+}
+.ListDetails {
+  text-align: center;
+}
+
+.ListDetails > p {
+  font-size: 12px;
+}
+
+.ListDetails > .lastedit {
+  color: #ee6502;
+}
+
+.ListItems {
+  width: 80%;
+  height: 80px;
+  background-color: #585858;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  padding: 0 62px 0 20px;
+  z-index: 10;
+  position: absolute;
+}
+
+.ListItems:hover + .hoverItems {
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.2s;
+  transform: translateX(80px);
+}
+
+.hoverItems:hover {
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.2s;
+  transform: translateX(80px);
+}
+
+.BucketItemsContainer:hover,
+.ListItemsContainer:hover {
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.2s;
+  transform: translateX(1px);
+}

@@ -1,0 +1,22 @@
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 150px;
+}
+
+.ql-container,
+.ql-editor {
+  height: 85%;
+}
+
+.ql-container,
+.ql-toolbar {
+  border-radius: 10px;
+}
+
+.quill {
+  width: 70%;
+  height: 300px;
+}
