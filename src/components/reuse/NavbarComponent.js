@@ -1,20 +1,16 @@
 import logo from "../../assets/logo.png";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../Components.css";
-import {
-  Nav,
-  Navbar,
-  NavDropdown,
-  Container,
-  Offcanvas,
-} from "react-bootstrap";
+import { Nav, Navbar, Container, Offcanvas } from "react-bootstrap";
+import useAuth from "../../hooks/useAuth";
 
-const prevDef = (e) => {
-  e.preventDefault();
-  console.log(e);
-};
+// const prevDef = (e) => {
+//   e.preventDefault();
+//   console.log(e);
+// };
 
 const NavbarComponent = () => {
+  const { user, logout } = useAuth();
   return (
     // <Navbar expand="lg" fixed="top" bg="dark">
     //   <Container fluid>
@@ -34,19 +30,19 @@ const NavbarComponent = () => {
     //       <Offcanvas.Body>
     //         <Nav className="ms-auto" variant="tabs" defaultActiveKey="/">
     //           <Nav.Item>
-    //             <Nav.Link href="/">Home</Nav.Link>
+    //             <NavLink href="/">Home</NavLink>
     //           </Nav.Item>
     //           <Nav.Item>
-    //             <Nav.Link href="/about">About</Nav.Link>
+    //             <NavLink href="/about">About</NavLink>
     //           </Nav.Item>
     //           <Nav.Item>
-    //             <Nav.Link href="#f">Features</Nav.Link>
+    //             <NavLink href="#f">Features</NavLink>
     //           </Nav.Item>
     //           <Nav.Item>
-    //             <Nav.Link href="/bucket">My Bucket</Nav.Link>
+    //             <NavLink href="/bucket">My Bucket</NavLink>
     //           </Nav.Item>
     //           <Nav.Item>
-    //             <Nav.Link href="/signin">Sign In</Nav.Link>
+    //             <NavLink href="/signin">Sign In</NavLink>
     //           </Nav.Item>
     //         </Nav>
     //       </Offcanvas.Body>
@@ -84,30 +80,30 @@ const NavbarComponent = () => {
               defaultActiveKey="/"
             >
               <Nav.Item>
-                <Nav.Link as={NavLink} to="/">
-                  Home
-                </Nav.Link>
+                <NavLink to="/">Home</NavLink>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link as={NavLink} to="/about">
-                  About Us
-                </Nav.Link>
+                <NavLink to="/about">About Us</NavLink>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link as={NavLink} to="/features">
-                  Features
-                </Nav.Link>
+                <NavLink to="/features">Features</NavLink>
               </Nav.Item>
-              <Nav.Item>
-                <Nav.Link as={NavLink} to="/bucket">
-                  MyBucket
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link as={NavLink} to="/signin">
-                  Signin
-                </Nav.Link>
-              </Nav.Item>
+              {user && (
+                <Nav.Item>
+                  <NavLink to="/bucket">MyBucket</NavLink>
+                </Nav.Item>
+              )}
+              {user ? (
+                <Nav.Item>
+                  <NavLink to="/" onClick={logout}>
+                    Logout
+                  </NavLink>
+                </Nav.Item>
+              ) : (
+                <Nav.Item>
+                  <NavLink to="/signin">Signin</NavLink>
+                </Nav.Item>
+              )}
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
