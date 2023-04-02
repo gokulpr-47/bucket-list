@@ -14,9 +14,9 @@ body,
 }
 
 body {
-  background: #1f1f1f;
+  background: #1f1f1f !important;
   font-family: "poppins";
-  color: white;
+  color: white !important;
 }
 
 a {
