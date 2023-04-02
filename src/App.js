@@ -5,7 +5,7 @@ import Bucket from "./pages/Bucket";
 import NavbarComponent from "./components/reuse/NavbarComponent";
 import NotFound from "./pages/NotFound";
 import Editor from "./pages/Editor";
-import Test from "./pages/Test";
+// import Test from "./pages/Test";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
@@ -28,9 +28,9 @@ function App() {
                 <Route
                   path="/"
                   element={
-                    <ProtectedRoute>
-                      <Home />
-                    </ProtectedRoute>
+                    // <ProtectedRoute>
+                    <Home />
+                    // </ProtectedRoute>
                   }
                 />
                 <Route path="/bucket">
