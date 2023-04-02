@@ -30,7 +30,7 @@ const Welcome = () => {
           lg={6}
         >
           <div className="welcome-image">
-            <img src={welcomeImage} alt="welcome image" />
+            <img src={welcomeImage} alt="welcome" />
           </div>
         </Col>
       </Row>

@@ -31,6 +31,7 @@ const Signup = () => {
   return (
     <div className="Signin">
       <div className="SigninContainer">
+        {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleSubmit}>
           <h4 style={{ color: "white" }}>
             Create a new <span style={{ color: "#ee6502" }}>account!!</span>

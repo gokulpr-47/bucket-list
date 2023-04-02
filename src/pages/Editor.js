@@ -5,13 +5,14 @@ import "./Editor.css";
 import { useLocation } from "react-router-dom";
 import { onValue, ref, serverTimestamp, update } from "firebase/database";
 import { db } from "../util/initFirebase";
-import useEditing from "../hooks/useEditing";
+// import useEditing from "../hooks/useEditing";
 import useAuth from "../hooks/useAuth";
 
 export default function Editor() {
   const [value, setValue] = useState(""); //storing the values entered in the editor.
   const [user, setUser] = useState(); //storing active user to check if there is an active user in the editor
-  const { pathname, setPathname } = useEditing();
+  // const { pathname, setPathname } = useEditing();
+  const help = useRef("");
 
   const { userid } = useAuth(); // id of the logged in user
 
@@ -24,7 +25,7 @@ export default function Editor() {
   const bucket = location.state.bucket;
   const uuid = location.state.uuid;
 
-  var help = "";
+  // let help = "";
 
   useEffect(() => {
     onValue(ref(db), (snapshot) => {
@@ -38,9 +39,10 @@ export default function Editor() {
           Object.values(bucketObj.list).find((list) => list.uuid === uuid);
         setValue(editorObj.value);
         setUser(editorObj.activeUser);
-        help = JSON.stringify(editorObj.activeUser);
+        help.current = JSON.stringify(editorObj.activeUser);
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -51,6 +53,7 @@ export default function Editor() {
           lastedit: serverTimestamp(),
         }));
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -59,6 +62,7 @@ export default function Editor() {
         value,
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   let modules = {

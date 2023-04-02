@@ -31,13 +31,12 @@ function BucketList() {
 
         if (bucketObj !== null && bucketObj.list)
           bucketObj.list &&
-            Object.values(bucketObj.list).map((lists) => {
-              setListData((prevState) => {
-                return [...prevState, lists];
-              });
-            });
+            Object.values(bucketObj.list).map((lists) =>
+              setListData((prevState) => [...prevState, lists]),
+            );
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

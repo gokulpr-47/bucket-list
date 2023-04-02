@@ -1,18 +1,18 @@
 import { faTrashCan, faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ref, remove, update, onValue } from "firebase/database";
+import { ref, remove, onValue } from "firebase/database";
 import { useEffect, useState } from "react";
 import usePop from "../../hooks/usePop";
 import { db } from "../../util/initFirebase";
 import UpdateBucket from "../Popup/UpdateBucket";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Col } from "react-bootstrap";
 
 const BucketComponent = ({ content }) => {
   const { bucketEdit, setBucketEdit } = usePop();
   const { bucketName, uuid, list } = content;
 
-  const location = useLocation();
+  // const location = useLocation();
   const navigate = useNavigate();
 
   const [users, setUsers] = useState([]);
@@ -21,22 +21,25 @@ const BucketComponent = ({ content }) => {
     onValue(ref(db), (snapshot) => {
       const dbData = snapshot.val();
       if (dbData !== null)
-        Object.entries(dbData.bucket).map((bucket) => {
-          if (bucket[0] === uuid) {
-            Object.values(bucket[1].userid).map((user) => {
+        Object.entries(dbData.bucket).map(
+          (bucket) =>
+            // if (bucket[0] === uuid) {
+            bucket[0] === uuid &&
+            Object.values(bucket[1].userid).map((user) =>
               //stores the userids from the buckets to users state
-              setUsers((prevState) => [...prevState, user.userid]);
-            });
-          }
-        });
+              setUsers((prevState) => [...prevState, user.userid]),
+            ),
+          // }
+        );
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const deleteBucket = async () => {
-    users.map((user, i) => {
+    users.map((user, i) =>
       // removing the userid from the users array
-      remove(ref(db, `users/${user}/${uuid}`));
-    });
+      remove(ref(db, `users/${user}/${uuid}`)),
+    );
     //removing the userid from the bucket array
     await remove(ref(db, `/bucket/${uuid}`));
   };

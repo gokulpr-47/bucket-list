@@ -6,7 +6,7 @@ import { db } from "../../util/initFirebase";
 import { ref, set, push } from "firebase/database";
 
 const JoinBucket = () => {
-  const { joinPop, setJoinPop } = usePop();
+  const { setJoinPop } = usePop();
   const { userid } = useAuth();
   const [bucketId, setBucketId] = useState("");
 

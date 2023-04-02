@@ -5,8 +5,8 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { db, auth } from "../util/initFirebase";
-import { set, ref } from "firebase/database";
+import { auth } from "../util/initFirebase";
+// import { set, ref } from "firebase/database";
 
 const UserContext = createContext();
 
@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log(currentUser);
       setUser(currentUser);
-      const { email, uid } = currentUser;
+      const { uid } = currentUser;
       setUserid(uid);
     });
     return () => {

@@ -7,12 +7,10 @@ import usePop from "../hooks/usePop";
 import { useEffect, useState } from "react";
 import { onValue, ref } from "firebase/database";
 import { db } from "../util/initFirebase";
-import { useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { Row, Container } from "react-bootstrap";
 
 const Bucket = () => {
-  const navigate = useNavigate();
   const username = "Gokul P R";
   const { pop, joinPop } = usePop();
 
@@ -28,16 +26,18 @@ const Bucket = () => {
         const userFind = Object.entries(dbData.users).find(
           (user) => user[0] === userid,
         );
-        Object.keys(userFind[1]).map((user) => {
-          Object.values(dbData.bucket).find((buckets) => {
-            if (user === buckets.uuid)
-              setData((prevState) => {
-                return [...prevState, buckets];
-              });
-          });
-        });
+        Object.keys(userFind[1]).map((user) =>
+          Object.values(dbData.bucket).find(
+            (buckets) =>
+              // if (user === buckets.uuid) {
+              user === buckets.uuid &&
+              setData((prevState) => [...prevState, buckets]),
+              // }
+          ),
+        );
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

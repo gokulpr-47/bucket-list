@@ -7,7 +7,7 @@ import { Dropdown, Col, Row } from "react-bootstrap";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const BucketHeader = ({ bucketname, code, username }) => {
-  const { setPop, setListPop, joinPop, setJoinPop } = usePop();
+  const { setPop, setListPop, setJoinPop } = usePop();
 
   const [copied, setCopied] = useState(false);
   const location = useLocation();
@@ -21,10 +21,6 @@ const BucketHeader = ({ bucketname, code, username }) => {
 
   const joinOptions = () => {
     setJoinPop((prevState) => !prevState);
-  };
-
-  const dropdown = () => {
-    console.log(dropdown);
   };
 
   return (
