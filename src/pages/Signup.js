@@ -32,9 +32,9 @@ const Signup = () => {
     <div className="Signin">
       <div className="SigninContainer">
         <form onSubmit={handleSubmit}>
-          <h3 style={{ color: "white" }}>
+          <h4 style={{ color: "white" }}>
             Create a new <span style={{ color: "#ee6502" }}>account!!</span>
-          </h3>
+          </h4>
           <input
             type="email"
             value={email}

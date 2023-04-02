@@ -65,6 +65,7 @@ input:focus {
 
 .switch {
   font-size: 10px;
+  font-weight: 100;
   margin-bottom: 10px;
 }
 
@@ -75,4 +76,9 @@ input:focus {
 .switch > span:hover {
   color: #d08854;
   cursor: pointer;
+}
+
+.error-message {
+  font-size: 13px;
+  font-weight: 200;
 }

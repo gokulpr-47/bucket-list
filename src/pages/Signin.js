@@ -22,6 +22,7 @@ const Signin = () => {
       setError(e.message);
       console.error(e.message);
     }
+    console.log(error);
   };
 
   const switchPage = () => {
@@ -31,11 +32,11 @@ const Signin = () => {
   return (
     <div className="Signin">
       <div className="SigninContainer">
+        {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleSubmit}>
-          <h3 style={{ color: "#EE6502" }}>
+          <h4 style={{ color: "#EE6502" }}>
             SignIn <span style={{ color: "white" }}>To Your Bucket List!!</span>
-          </h3>
-          {error && <p>{error}</p>}
+          </h4>
           <input
             type="email"
             value={email}

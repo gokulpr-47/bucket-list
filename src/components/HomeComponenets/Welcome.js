@@ -16,9 +16,10 @@ const Welcome = () => {
         >
           <div className="welcome-text">
             <h3>Welcome to the BUCKET &lt;li&gt;</h3>
-            <p>----------------------------------</p>
-            <p>----------------------------------</p>
-            <p>----------------------------------</p>
+            <p>
+              A collaborative platform for creating and sharing your bucket
+              list. Start building your ultimate bucket list today!
+            </p>
           </div>
         </Col>
         {/* <div className="col-6 col-xs-pull-6 d-none d-lg-block "> */}

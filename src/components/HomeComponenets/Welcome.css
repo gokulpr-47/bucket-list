@@ -18,3 +18,11 @@
   justify-content: center;
   align-items: center;;
 } */
+
+.welcome-text > p {
+  margin: auto;
+  font-size: 13px;
+  font-weight: 100;
+  width: 50%;
+  margin: auto;
+}
