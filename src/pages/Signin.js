@@ -17,7 +17,7 @@ const Signin = () => {
     setError("");
     try {
       await signIn(email, password);
-      navigate("/");
+      navigate("/bucket");
     } catch (e) {
       setError(e.message);
       console.error(e.message);

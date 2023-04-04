@@ -17,7 +17,7 @@ const Signup = () => {
     setError("");
     try {
       await createUser(email, password);
-      navigate("/");
+      navigate("/bucket");
     } catch (e) {
       setError(e.message);
       console.error(e.message);

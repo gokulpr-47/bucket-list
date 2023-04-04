@@ -3,11 +3,10 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const ProtectedRoute = ({ children }) => {
-  const navigate = useNavigate();
-
   const { user } = useAuth();
+  const navigate = useNavigate();
   if (!user) {
-    return navigate("/signin");
+    navigate("/signin");
   }
   return children;
 };

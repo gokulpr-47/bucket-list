@@ -50,17 +50,24 @@ const NavbarComponent = () => {
     //   </Container>
     // </Navbar>
 
-    <Navbar expand="lg" className="mb-3 navbar-dark bg-dark" fixed="top">
+    <Navbar
+      expand="lg"
+      className="mb-3 navbar-dark bg-dark"
+      fixed="top"
+      onSelect={(event, eventKey) => console.log(event, eventKey)}
+    >
       <Container>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
         <div className="brand-container">
-          <img
-            className="pe-2"
-            style={{ width: 50, height: 50 }}
-            src={logo}
-            alt="logo"
-          />
-          <Navbar.Brand to="/">
+          <Nav.Link as={NavLink} to="/">
+            <img
+              className="pe-2"
+              style={{ width: 50, height: 50 }}
+              src={logo}
+              alt="logo"
+            />
+          </Nav.Link>
+          <Navbar.Brand as={NavLink} to="/">
             <p>
               Bucket<span> &lt;li&gt;</span>
             </p>

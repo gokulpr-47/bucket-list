@@ -6,7 +6,7 @@ export default function GetStarted({ progress }) {
   const navigate = useNavigate();
 
   const gotoBucket = () => {
-    navigate("bucket");
+    navigate("/bucket");
   };
   return (
     <div className="get-started">

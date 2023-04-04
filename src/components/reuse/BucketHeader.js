@@ -33,7 +33,8 @@ const BucketHeader = ({ bucketname, code, username }) => {
         {/* ternary operation to display the username or bucketname and removing 'Bucketlist' from p tag with respect to the page rendered */}
         {/* <p>{bucketname ? bucketname : username}</p>
         {bucketname ? <p></p> : <p>'s Bucketlist,</p>} */}
-        {bucketname ? bucketname : <p>{username}'s bucket</p>}
+        {/* {bucketname ? bucketname : <p>{username}'s bucket</p>} */}
+        <p>Buckets: </p>
 
         {/* showing the code and copy button only when the name pros is passed */}
         {bucketname && (
