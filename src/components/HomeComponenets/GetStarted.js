@@ -1,12 +1,18 @@
 import React from "react";
 import "./GetStarted.css";
 import { useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 export default function GetStarted({ progress }) {
+  const { user } = useAuth();
   const navigate = useNavigate();
 
   const gotoBucket = () => {
-    navigate("/bucket");
+    if (user) {
+      navigate("/bucket");
+    } else {
+      navigate("/signin");
+    }
   };
   return (
     <div className="get-started">

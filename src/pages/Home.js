@@ -32,7 +32,6 @@ export default function Home() {
   // const parallax = useParallax <HTMLDivElement >({
   //     rotate: [0, 360],
   //   });
-
   return (
     <>
       {/* <p>Home page </p>
