@@ -8,11 +8,7 @@ export default function GetStarted({ progress }) {
   const navigate = useNavigate();
 
   const gotoBucket = () => {
-    if (user) {
-      navigate("/bucket");
-    } else {
-      navigate("/signin");
-    }
+    user ? navigate("/bucket") : navigate("/signin");
   };
   return (
     <div className="get-started">
