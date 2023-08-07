@@ -20,15 +20,17 @@ function BucketList() {
   const bucketCode = location.state.code;
   let bucketname = location.state.bucketName;
 
+  var dbListData;
+
   useEffect(() => {
     onValue(ref(db), (snapshot) => {
       setListData(() => "");
-      const dbListData = snapshot.val();
+      dbListData = snapshot.val();
       if (dbListData !== null) {
         var bucketObj = Object.values(dbListData.bucket).find(
           (buckets) => buckets.bucketName === bucketname,
         );
-
+        console.log(bucketObj);
         if (bucketObj !== null && bucketObj.list)
           bucketObj.list &&
             Object.values(bucketObj.list).map((lists) =>

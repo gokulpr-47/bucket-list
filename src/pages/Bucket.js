@@ -26,13 +26,13 @@ const Bucket = () => {
         const userFind = Object.entries(dbData.users).find(
           (user) => user[0] === userid,
         );
-        Object.keys(userFind[1]).map((user) =>
+        Object.keys(userFind[1])?.map((user) =>
           Object.values(dbData.bucket).find(
             (buckets) =>
               // if (user === buckets.uuid) {
               user === buckets.uuid &&
               setData((prevState) => [...prevState, buckets]),
-              // }
+            // }
           ),
         );
       }
